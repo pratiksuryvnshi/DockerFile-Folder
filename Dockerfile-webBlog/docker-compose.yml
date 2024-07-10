@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  web_blog:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/appwriteBlog
+      - /appwriteBlog/node_modules
+    ports:
+      - "8080:80"
+    command: ["nginx", "-g", "daemon off;"]
+
+volumes:
+  node_modules:
+
